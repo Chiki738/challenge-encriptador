@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Realización del desafío de encriptador de texto" />
+    <meta name="keywords" content="challenge, encriptador, texto" />
+    <meta name="author" content="@Chiki" />
+
+    <link rel="icon" type="image/svg+xml" href="/img/icon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/e424d20747.js"
+      crossorigin="anonymous"></script>
+
+    <title>Codificador de texto</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-div">
+        <h2>Alura</h2>
+
+        <nav>
+          <a
+            href="https://github.com/Chiki975/challenge-encriptador.git"
+            title="Repositorio del proyecto en GitHub"
+            target="_blank">
+            <i class="fa-brands fa-github"></i>&nbsp;Repositorio
+          </a>
+
+          <a
+            href="https://portafolio-react-vite.vercel.app/"
+            title="Portafolio"
+            target="_blank">
+            <i class="fa-solid fa-house"></i>&nbsp;Portafolio
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="div-container">
+        <div class="div-container-ingreso">
+          <textarea
+            id="texto-ingresado"
+            placeholder="Introduce el texto aquí"></textarea>
+
+          <p>¡¡¡Solo letras minúsculas y sin acentos!!!</p>
+
+          <div class="botones-encriptar-desencriptar">
+            <button id="boton-encriptar">
+              <i class="fa-solid fa-lock"></i>&nbsp;ENCRIPTAR
+            </button>
+
+            <button id="boton-desencriptar">
+              <i class="fa-solid fa-lock-open"></i>&nbsp;DESENCRIPTAR
+            </button>
+          </div>
+        </div>
+
+        <div class="div-container-resultado">
+          <div id="imagen-texto">
+            <div>
+              <figure class="imagen-texto-figure">
+                <img src="./img/imagen.jpg" alt="imagen buscando texto" />
+              </figure>
+
+              <p class="imagen-texto-p">
+                <strong>Ningún mensaje fue encontrado</strong>
+                <br />
+
+                Ingresa el texto que deseas encriptar o desencriptar
+              </p>
+            </div>
+          </div>
+
+          <div class="container-resultado">
+            <textarea
+              id="texto-resultado"
+              placeholder="Texto encriptado/desencriptado"
+              readonly></textarea>
+
+            <button id="boton-copiar">
+              <i class="fa-solid fa-copy"></i>&nbsp;COPIAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="div-container-resultado-responsive">
+      <p class="texto-responsive">
+        <strong>Ningún mensaje fue encontrado</strong>
+        <br />
+
+        Ingresa el texto que deseas encriptar o desencriptar
+      </p>
+
+      <div class="container-resultado-responsive">
+        <textarea id="texto-resultado-responsive" readonly></textarea>
+
+        <button id="boton-copiar-responsive">
+          <i class="fa-solid fa-copy"></i>&nbsp;COPIAR
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-datos">
+        <p>
+          <strong>
+            © 2024 Encriptador de texto. Todos los derechos reservados.
+          </strong>
+        </p>
+        <div>
+          <p>
+            <strong>Desarrollado por:</strong> Carlos Daniel Alzamora Huamán
+          </p>
+          <p><strong>Contacto:</strong> carlosalzamorahuaman@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-enlaces">
+        <a
+          href="https://api.whatsapp.com/send?phone=51956299119"
+          title="WhatsApp"
+          target="_blank"
+          rel="noopener noreferrer">
+          WhatsApp&nbsp;
+          <i class="fa-brands fa-whatsapp" id="whatsapp"></i>
+        </a>
+        <a
+          href="https://t.me/Chiki738"
+          title="Telegram"
+          target="_blank"
+          rel="noopener noreferrer">
+          Telegram&nbsp;
+          <i class="fa-brands fa-telegram" id="telegram"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/daniel738/"
+          title="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn&nbsp;
+          <i class="fa-brands fa-linkedin-in" id="linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/Chiki975/challenge-encriptador.git"
+          title="GitHub"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub&nbsp;<i class="fa-brands fa-github" id="github"></i>
+        </a>
+        <a
+          href="mailto:carlosalzamorahuaman@gmail.com"
+          title="Gmail"
+          target="_blank"
+          rel="noopener noreferrer">
+          Gmail&nbsp;<i class="fa-regular fa-envelope" id="gmail"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="/logica.js"></script>
+  </body>
+</html>

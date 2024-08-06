@@ -1,0 +1,392 @@
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+     * {
+         padding: 0;
+         margin: 0;
+         font-family: "Poppins", sans-serif;
+         border: 0;
+     }
+
+     html {
+         background-color: #f3f5fc;
+     }
+
+     a {
+         text-decoration: none;
+         color: #000000;
+     }
+
+     textarea {
+         border: none;
+         outline: none;
+         overflow: auto;
+         resize: none;
+         width: 100%;
+         height: 78%;
+         font-size: 18px;
+         background-color: transparent;
+     }
+
+     button {
+         padding: 10px;
+         border-radius: 10px;
+         outline: 1px solid #0a3871;
+         font-size: 15px;
+         cursor: pointer;
+     }
+
+     button:hover {
+         box-shadow: 2px 2px 2px 2px #3467a7;
+     }
+
+     header {
+         background-color: #e0e0e0;
+         width: 100%;
+         position: absolute;
+     }
+
+     .header-div {
+         padding: 0 10px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+     }
+
+     .header-div h2 {
+         color: #0a3871;
+         font-size: 25px;
+     }
+
+     .header-div nav {
+         display: flex;
+         gap: 30px;
+     }
+
+     main {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+     }
+
+     .div-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 35px;
+         max-width: 1440px;
+         width: 100%;
+         max-height: 800px;
+         height: 100%;
+     }
+
+     .div-container>div {
+         padding: 13px;
+         flex-direction: column;
+         align-items: center;
+         box-sizing: border-box;
+         height: 80%;
+     }
+
+     .div-container-ingreso {
+         width: 60%;
+         justify-content: space-between;
+         display: flex;
+     }
+
+     .div-container-ingreso p {
+         font-size: 15px;
+     }
+
+     .botones-encriptar-desencriptar {
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+     }
+
+     .botones-encriptar-desencriptar button {
+         width: 40%;
+     }
+
+     #boton-encriptar {
+         background-color: #0a3871;
+         color: #fff;
+     }
+
+     #boton-desencriptar {
+         color: #0a3871;
+         background-color: transparent;
+     }
+
+     .div-container-resultado {
+         justify-content: center;
+         background-color: #ffffff;
+         border-radius: 20px;
+         width: 30%;
+     }
+
+
+     #imagen-texto {
+         display: flex;
+         /*Cambia a display none y flex*/
+         justify-content: center;
+         align-items: center;
+         gap: 5px;
+     }
+
+     .imagen-texto-figure {
+         width: 100%;
+     }
+
+     .imagen-texto-figure img {
+         max-width: 100%;
+         height: auto;
+     }
+
+     .imagen-texto-p {
+         text-align: center;
+         font-size: 13px;
+     }
+
+     .imagen-texto-p strong {
+         font-size: 18px;
+     }
+
+     .container-resultado {
+         height: 100%;
+         width: 100%;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: center;
+         display: none;
+         /*Cambia a display flex y none*/
+     }
+
+     #boton-copiar {
+         width: 100%;
+         background-color: transparent;
+         color: #0a3871;
+     }
+
+     #div-container-resultado-responsive {
+         justify-content: center;
+         align-items: center;
+         height: 15vh;
+         /*Cambiar el height entre 15vh y 70vh*/
+         box-sizing: border-box;
+         margin: 0 10px;
+         padding: 13px 13px 0 13px;
+         background-color: #fff;
+         border-radius: 20px;
+     }
+
+     .texto-responsive {
+         font-size: 13px;
+         text-align: center;
+         display: block;
+         /*display block y none*/
+     }
+
+     .container-resultado-responsive {
+         display: none;
+         /*Cambia display entre flex y none*/
+         flex-direction: column;
+         height: 100%;
+         width: 100%;
+         gap: 20px;
+     }
+
+     .container-resultado-responsive textarea {
+         border-radius: 20px;
+     }
+
+
+     #boton-copiar-responsive {
+         color: #0a3871;
+         background-color: transparent;
+     }
+
+     footer {
+         background-color: #ececec;
+         padding: 10px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .footer-datos {
+         width: 100%;
+         display: flex;
+         justify-content: space-evenly;
+         flex-wrap: wrap;
+     }
+
+     .footer-datos p {
+         font-size: 13px;
+     }
+
+     .footer-enlaces {
+         margin-top: 10px;
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 20px;
+     }
+
+     .footer-enlaces i {
+         outline: 1px solid black;
+         border-radius: 10px;
+         padding: 5px;
+     }
+
+     .footer-enlaces a {
+         font-size: 13px;
+     }
+
+     #linkedin {
+         background-color: #0000ff;
+         color: #fff;
+     }
+
+     #github {
+         background-color: #fff;
+         color: #000;
+     }
+
+     #gmail {
+         background-color: #ce2727;
+     }
+
+     #telegram {
+         background-color: #26aaff;
+     }
+
+     #whatsapp {
+         background-color: #4eff48;
+     }
+
+     .footer-enlaces a:hover {
+         cursor: pointer;
+     }
+
+     @media only screen and (min-width:376px) and (max-width:768px) {
+
+         .header-div h2 {
+             font-size: 20px;
+         }
+
+         .header-div i {
+             font-size: 15px;
+         }
+
+         .header-div nav a {
+             font-size: 15px;
+         }
+
+         main {
+             display: flex;
+             justify-content: space-between;
+             flex-direction: column-reverse;
+             height: 80vh;
+         }
+
+
+         .div-container {
+             flex-direction: column;
+             max-width: 100%;
+             width: 100%;
+             max-height: 100%;
+             height: 100%;
+             gap: 20px;
+         }
+
+         .div-container>div {
+             height: 90%;
+         }
+
+         .div-container-ingreso {
+             width: 100%;
+         }
+
+         .botones-encriptar-desencriptar button {
+             width: 45%;
+         }
+
+         #div-container-resultado-responsive {
+             height: 15vh;
+             margin-bottom: 5vh;
+         }
+
+         .footer-datos p {
+             font-size: 10px;
+         }
+
+         .footer-enlaces {
+             gap: 13px;
+         }
+
+         .footer-enlaces a {
+             font-size: 10px;
+         }
+     }
+
+     @media only screen and (max-width:375px) {
+         .header-div h2 {
+             font-size: 20px;
+         }
+
+         .header-div i {
+             font-size: 15px;
+         }
+
+         .header-div nav a {
+             font-size: 15px;
+         }
+
+         main {
+             display: flex;
+             justify-content: space-between;
+             flex-direction: column-reverse;
+             height: 80vh;
+         }
+
+
+         .div-container {
+             flex-direction: column;
+             max-width: 100%;
+             width: 100%;
+             max-height: 100%;
+             height: 100%;
+             gap: 20px;
+         }
+
+         .div-container>div {
+             height: 90%;
+         }
+
+         .div-container-ingreso {
+             width: 100%;
+         }
+
+         .botones-encriptar-desencriptar button {
+             width: 45%;
+         }
+
+         #div-container-resultado-responsive {
+             height: 15vh;
+             margin-bottom: 5vh;
+         }
+
+         .footer-datos p {
+             font-size: 10px;
+         }
+
+         .footer-enlaces {
+             gap: 13px;
+         }
+
+         .footer-enlaces a {
+             font-size: 10px;
+         }
+     }
