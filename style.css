@@ -285,7 +285,6 @@
          }
 
          main {
-             display: flex;
              justify-content: space-between;
              flex-direction: column-reverse;
              height: 80vh;
@@ -299,10 +298,6 @@
              max-height: 100%;
              height: 100%;
              gap: 20px;
-         }
-
-         .div-container>div {
-             height: 90%;
          }
 
          .div-container-ingreso {
@@ -332,20 +327,28 @@
      }
 
      @media only screen and (max-width:375px) {
+
+         .header-div {
+             flex-direction: column;
+         }
+
          .header-div h2 {
-             font-size: 20px;
+             font-size: 15px;
          }
 
          .header-div i {
-             font-size: 15px;
+             font-size: 13px;
+         }
+
+         .header-div nav {
+             flex-direction: row-reverse;
          }
 
          .header-div nav a {
-             font-size: 15px;
+             font-size: 13px;
          }
 
          main {
-             display: flex;
              justify-content: space-between;
              flex-direction: column-reverse;
              height: 80vh;
@@ -353,12 +356,12 @@
 
 
          .div-container {
-             flex-direction: column;
+             flex-direction: column-reverse;
+             justify-content: space-between;
              max-width: 100%;
              width: 100%;
              max-height: 100%;
              height: 100%;
-             gap: 20px;
          }
 
          .div-container>div {
@@ -367,10 +370,17 @@
 
          .div-container-ingreso {
              width: 100%;
+             gap: 10px;
+         }
+
+
+         .botones-encriptar-desencriptar {
+             flex-direction: column;
+             gap: 10px;
          }
 
          .botones-encriptar-desencriptar button {
-             width: 45%;
+             width: 100%;
          }
 
          #div-container-resultado-responsive {
