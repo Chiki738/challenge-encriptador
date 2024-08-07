@@ -83,9 +83,7 @@ function manejarResultado(textoIngresado, encriptarOdesencriptar) {
     textoResultadoResponsive.value = encriptarOdesencriptar(textoIngresado);
 
     // Desplazar la vista hasta el contenedor responsive si está visible
-    if (divContainerResultadoResponsive.style.display !== "none") {
-      divContainerResultadoResponsive.scrollIntoView({ behavior: "smooth" });
-    }
+    divContainerResultadoResponsive.scrollIntoView({ behavior: "smooth" });
   }
 }
 
