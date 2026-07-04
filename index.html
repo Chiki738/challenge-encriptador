@@ -1,149 +1,176 @@
 <!DOCTYPE html>
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Realización del desafío de encriptador de texto" />
-    <meta name="keywords" content="challenge, encriptador, texto" />
-    <meta name="author" content="@Chiki" />
+      content="Chiki Cipher es un encriptador de texto web desarrollado con HTML, CSS y JavaScript para el Challenge Encriptador de Alura." />
+    <meta
+      name="keywords"
+      content="encriptador de texto, alura challenge, javascript, html, css, portfolio web" />
+    <meta name="author" content="Carlos Alzamora | Chiki" />
 
-    <link rel="icon" type="image/svg+xml" href="/img/icon.svg" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/icon.svg" />
+    <link rel="stylesheet" href="./style.css" />
 
     <script
       src="https://kit.fontawesome.com/e424d20747.js"
       crossorigin="anonymous"></script>
+    <script src="./logica.js" defer></script>
 
-    <title>Codificador de texto</title>
+    <title>Chiki Cipher | Encriptador de texto</title>
   </head>
 
   <body>
-    <header>
-      <div class="header-div">
-        <h2>Alura</h2>
+    <header class="site-header">
+      <a class="brand" href="#app" aria-label="Ir al encriptador Chiki Cipher">
+        <span class="brand__mark" aria-hidden="true">C</span>
+        <span class="brand__copy">
+          <strong>Chiki Cipher</strong>
+          <small>Alura Challenge personalizado</small>
+        </span>
+      </a>
 
-        <nav>
-          <a
-            href="https://github.com/Chiki738/challenge-encriptador.git"
-            title="Repositorio del proyecto en GitHub"
-            target="_blank">
-            <i class="fa-brands fa-github"></i>&nbsp;Repositorio
-          </a>
+      <nav class="site-nav" aria-label="Enlaces del proyecto">
+        <a
+          href="https://github.com/Chiki738/challenge-encriptador.git"
+          title="Repositorio del proyecto en GitHub"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>Repositorio</span>
+        </a>
 
-          <a
-            href="https://portafolio-react-vite.vercel.app/"
-            title="Portafolio"
-            target="_blank">
-            <i class="fa-solid fa-house"></i>&nbsp;Portafolio
-          </a>
-        </nav>
-      </div>
+        <a
+          href="https://portafolio-react-vite.vercel.app/"
+          title="Portafolio de Carlos Alzamora"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Portafolio</span>
+        </a>
+      </nav>
     </header>
 
-    <main>
-      <div class="div-container">
-        <div class="div-container-ingreso">
-          <textarea
-            id="texto-ingresado"
-            placeholder="Introduce el texto aquí"></textarea>
-
-          <p>¡¡¡Solo letras minúsculas y sin acentos!!!</p>
-
-          <div class="botones-encriptar-desencriptar">
-            <button id="boton-encriptar">
-              <i class="fa-solid fa-lock"></i>&nbsp;ENCRIPTAR
-            </button>
-
-            <button id="boton-desencriptar">
-              <i class="fa-solid fa-lock-open"></i>&nbsp;DESENCRIPTAR
-            </button>
+    <main id="app" class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <article class="editor-panel">
+          <div class="section-heading">
+            <p class="eyebrow">HTML · CSS · JavaScript</p>
+            <h1 id="app-title">Encriptador de texto con estilo propio.</h1>
+            <p>
+              Convierte mensajes en una salida cifrada y vuelve al texto original
+              con una interfaz directa, responsiva y pensada para portafolio.
+            </p>
           </div>
-        </div>
 
-        <div class="div-container-resultado">
-          <div id="imagen-texto">
-            <div>
-              <figure class="imagen-texto-figure">
-                <img src="./img/imagen.jpg" alt="imagen buscando texto" />
-              </figure>
+          <div class="field-group">
+            <div class="field-header">
+              <label for="texto-ingresado">Mensaje protegido</label>
+              <span id="contador-caracteres">0 caracteres</span>
+            </div>
 
-              <p class="imagen-texto-p">
-                <strong>Ningún mensaje fue encontrado</strong>
-                <br />
+            <textarea
+              id="texto-ingresado"
+              class="secure-entry"
+              placeholder="escribe tu mensaje oculto aqui"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="none"
+              aria-describedby="regla-texto estado-aplicacion"></textarea>
 
-                Ingresa el texto que deseas encriptar o desencriptar
+            <div class="field-footer">
+              <p id="regla-texto">
+                Entrada oculta por defecto. Usa solo letras minúsculas,
+                espacios y sin acentos.
+              </p>
+              <p id="estado-aplicacion" class="status-message" role="status">
+                Procesa el mensaje para revelar su versión transformada.
               </p>
             </div>
           </div>
 
-          <div class="container-resultado">
-            <textarea
-              id="texto-resultado"
-              placeholder="Texto encriptado/desencriptado"
-              readonly></textarea>
+          <div class="actions" aria-label="Acciones de texto">
+            <button id="boton-encriptar" class="button button--primary" type="button">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
+              <span>Encriptar</span>
+            </button>
 
-            <button id="boton-copiar">
-              <i class="fa-solid fa-copy"></i>&nbsp;COPIAR
+            <button
+              id="boton-desencriptar"
+              class="button button--secondary"
+              type="button">
+              <i class="fa-solid fa-lock-open" aria-hidden="true"></i>
+              <span>Desencriptar</span>
             </button>
           </div>
-        </div>
-      </div>
+        </article>
+
+        <aside class="result-panel" aria-labelledby="resultado-title">
+          <div id="estado-vacio" class="empty-state">
+            <figure class="empty-state__image">
+              <img
+                src="./img/imagen.jpg"
+                alt="Ilustración del encriptador esperando un mensaje" />
+            </figure>
+            <div>
+              <p class="eyebrow">Salida</p>
+              <h2 id="resultado-title">Tu resultado aparecerá aquí.</h2>
+              <p>
+                El panel se actualiza cuando el mensaje tenga contenido válido.
+              </p>
+            </div>
+          </div>
+
+          <div id="estado-resultado" class="result-content is-hidden">
+            <div class="result-header">
+              <div>
+                <p class="eyebrow">Resultado</p>
+                <h2>Texto procesado</h2>
+              </div>
+              <span id="etiqueta-resultado" class="result-badge">Generado</span>
+            </div>
+
+            <textarea
+              id="texto-resultado"
+              readonly
+              aria-label="Resultado del texto procesado"></textarea>
+
+            <button id="boton-copiar" class="button button--copy" type="button">
+              <i class="fa-solid fa-copy" aria-hidden="true"></i>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </aside>
+      </section>
+
     </main>
 
-    <div id="div-container-resultado-responsive">
-      <p class="texto-responsive">
-        <strong>Ningún mensaje fue encontrado</strong>
-        <br />
-
-        Ingresa el texto que deseas encriptar o desencriptar
+    <footer class="site-footer">
+      <p>
+        <strong>Chiki Cipher</strong> · Desarrollado por Carlos Alzamora para el
+        Challenge Encriptador de Alura.
       </p>
 
-      <div class="container-resultado-responsive">
-        <textarea id="texto-resultado-responsive" readonly></textarea>
-
-        <button id="boton-copiar-responsive">
-          <i class="fa-solid fa-copy"></i>&nbsp;COPIAR
-        </button>
-      </div>
-    </div>
-
-    <footer>
-      <div class="footer-datos">
-        <p>
-          <strong>
-            © 2024 Encriptador de texto. Todos los derechos reservados.
-          </strong>
-        </p>
-        <div>
-          <p>
-            <strong>Desarrollado por:</strong> @Chiki
-          </p>
-          <p><strong>Contacto:</strong> carlosalzamorah@gmail.com</p>
-        </div>
-      </div>
-
-      <div class="footer-enlaces">
+      <div class="footer-links" aria-label="Perfiles profesionales">
         <a
           href="https://www.linkedin.com/in/chiki738/"
-          title="LinkedIn"
+          title="LinkedIn de Carlos Alzamora"
           target="_blank"
           rel="noopener noreferrer">
-          LinkedIn&nbsp;
-          <i class="fa-brands fa-linkedin-in" id="linkedin"></i>
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          <span>LinkedIn</span>
         </a>
         <a
           href="https://github.com/Chiki738/challenge-encriptador.git"
-          title="GitHub"
+          title="Repositorio en GitHub"
           target="_blank"
           rel="noopener noreferrer">
-          GitHub&nbsp;<i class="fa-brands fa-github" id="github"></i>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>GitHub</span>
         </a>
       </div>
     </footer>
-
-    <script src="/logica.js"></script>
   </body>
 </html>
